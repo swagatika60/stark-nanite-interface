@@ -5,67 +5,91 @@
   padding: 2rem;
   text-align: center;
 
-  /* JARVIS background effect */
-  background: radial-gradient(circle at center, #001018 0%, #00060a 100%);
-  color: #dffaff;
+  /* Multi-color cosmic gradient */
+  background: radial-gradient(circle at center,
+      #12001b 0%,
+      #001018 45%,
+      #00070f 100%);
+  color: #f8f8ff;
 }
 
-/* LOGO */
+/* MULTI-COLOR LOGO GLOW */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
-  transition: filter 300ms, transform 300ms;
-  filter: drop-shadow(0 0 1.2em #00eaff55);
+  transition: filter 400ms, transform 300ms;
+
+  filter: drop-shadow(0 0 1.2em #9d4edd55); /* purple base glow */
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 2.4em #00eaffcc);
   transform: scale(1.08);
+
+  /* mixed neon glow */
+  filter:
+    drop-shadow(0 0 0.8em #9d4edd)     /* purple */
+    drop-shadow(0 0 1.2em #00f0ffcc)   /* neon blue */
+    drop-shadow(0 0 1.6em #00ff6acc)   /* neon green */
+    drop-shadow(0 0 2em #ffd700cc);    /* gold */
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 3em #00c3ffcc);
-}
-
-/* SPIN ANIMATION */
+/* SPINNING */
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-/* SPIN IF USER ALLOWS */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+    animation: logo-spin infinite 18s linear;
   }
 }
 
-/* CARD / PANEL */
+/* GLASS CARD */
 .card {
   padding: 2em;
-  border: 1px solid #00eaff55;
-  border-radius: 12px;
-  box-shadow: 0 0 18px #00eaff33;
-  background: rgba(0, 20, 30, 0.35);
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  /* multi-color shadow */
+  box-shadow:
+    0 0 15px #9d4edd55,
+    0 0 20px #00f0ff33,
+    0 0 25px #00ff6a33,
+    0 0 30px #ffd70022;
+
+  background: rgba(0, 15, 25, 0.55);
   backdrop-filter: blur(6px);
 }
 
-/* DOCUMENTATION TEXT */
-.read-the-docs {
-  color: #7cd2e0;
-}
-
-/* JARVIS TEXT STYLE */
+/* MULTI-COLOR JARVIS TEXT  */
 .jarvis-text {
   font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #00eaff;
-  filter: drop-shadow(0 0 10px #00eaffaa);
-  padding-top: 10px;
+  font-size: 2rem;
+
+  /* animated gradient color */
+  background: linear-gradient(
+    90deg,
+    #9d4edd,
+    #00f0ff,
+    #00ff6a,
+    #ffd700,
+    #9d4edd
+  );
+  background-size: 400%;
+  
+  color: transparent;
+  animation: glowshift 5s infinite linear;
+
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.25));
+}
+
+@keyframes glowshift {
+  0%   { background-position: 0%; }
+  50%  { background-position: 100%; }
+  100% { background-position: 0%; }
 }
