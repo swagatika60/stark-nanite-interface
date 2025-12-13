@@ -1,26 +1,32 @@
 /* ROOT STYLING */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 
-  /* Multi-color cosmic gradient */
-  background: radial-gradient(circle at center,
-      #191818b3 0%,
-      #102a36 45%,
-      #00070f 100%);
-  color: #f8f8ff;
+  background: radial-gradient(
+    circle at center,
+    var(--bg-dark-1) 0%,
+    var(--bg-dark-2) 45%,
+    var(--bg-dark-3) 100%
+  );
+
+  color: var(--text-main);
 }
 
 /* MULTI-COLOR LOGO GLOW */
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 400ms, transform 300ms;
+  filter: drop-shadow(0 0 1.2em var(--purple));
+}
 
-  filter: drop-shadow(0 0 1.2em #9d4edd55); /* purple base glow */
+.logo:hover {
+  filter:
+    drop-shadow(0 0 0.8em var(--purple))
+    drop-shadow(0 0 1.2em var(--neon-blue))
+    drop-shadow(0 0 1.6em var(--neon-green))
+    drop-shadow(0 0 2em var(--gold));
 }
 
 .logo:hover {
@@ -47,46 +53,28 @@
 }
 
 /* GLASS CARD */
-.card {
-  padding: 2em;
-  border-radius: 16px;
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
-
-  /* multi-color shadow */
+ .card {
   box-shadow:
-    0 0 15px #9d4edd55,
-    0 0 20px #00f0ff33,
-    0 0 25px #00ff6a33,
-    0 0 30px #ffd70022;
-
-  background: rgba(0, 15, 25, 0.55);
-  backdrop-filter: blur(6px);
+    0 0 15px color-mix(in srgb, var(--purple) 40%, transparent),
+    0 0 20px color-mix(in srgb, var(--neon-blue) 30%, transparent),
+    0 0 25px color-mix(in srgb, var(--neon-green) 30%, transparent),
+    0 0 30px color-mix(in srgb, var(--gold) 20%, transparent);
 }
 
 /* MULTI-COLOR JARVIS TEXT  */
-.jarvis-text {
-  font-family: 'Orbitron', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 2rem;
-
-  /* animated gradient color */
+.nanite-spatial-interface-text {
   background: linear-gradient(
     90deg,
-    #9d4edd,
-    #00f0ff,
-    #00ff6a,
-    #ffd700,
-    #9d4edd
+    var(--purple),
+    var(--neon-blue),
+    var(--neon-green),
+    var(--gold),
+    var(--purple)
   );
-  background-size: 400%;
-  
-  color: transparent;
-  animation: glowshift 5s infinite linear;
-
-  filter: drop-shadow(0 0 12px rgba(255,255,255,0.25));
 }
+
+  
 
 @keyframes glowshift {
   0%   { background-position: 0%; }
