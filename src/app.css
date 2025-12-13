@@ -7,8 +7,8 @@
 
   /* Multi-color cosmic gradient */
   background: radial-gradient(circle at center,
-      #12001b 0%,
-      #001018 45%,
+      #191818b3 0%,
+      #102a36 45%,
       #00070f 100%);
   color: #f8f8ff;
 }
