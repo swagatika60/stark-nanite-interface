@@ -72,9 +72,15 @@
     var(--gold),
     var(--purple)
   );
+  background-size: 400%;
+  color: transparent;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  animation: glowshift 5s linear infinite;
 }
 
-  
 
 @keyframes glowshift {
   0%   { background-position: 0%; }
