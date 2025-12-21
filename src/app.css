@@ -1,89 +1,42 @@
-/* ROOT STYLING */
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-
-  background: radial-gradient(
-    circle at center,
-    var(--bg-dark-1) 0%,
-    var(--bg-dark-2) 45%,
-    var(--bg-dark-3) 100%
-  );
-
-  color: var(--text-main);
 }
 
-/* MULTI-COLOR LOGO GLOW */
 .logo {
-  filter: drop-shadow(0 0 1.2em var(--purple));
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
 }
-
 .logo:hover {
-  filter:
-    drop-shadow(0 0 0.8em var(--purple))
-    drop-shadow(0 0 1.2em var(--neon-blue))
-    drop-shadow(0 0 1.6em var(--neon-green))
-    drop-shadow(0 0 2em var(--gold));
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.logo:hover {
-  transform: scale(1.08);
-
-  /* mixed neon glow */
-  filter:
-    drop-shadow(0 0 0.8em #9d4edd)     /* purple */
-    drop-shadow(0 0 1.2em #00f0ffcc)   /* neon blue */
-    drop-shadow(0 0 1.6em #00ff6acc)   /* neon green */
-    drop-shadow(0 0 2em #ffd700cc);    /* gold */
-}
-
-/* SPINNING */
 @keyframes logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 18s linear;
+    animation: logo-spin infinite 20s linear;
   }
 }
 
-/* GLASS CARD */
-
- .card {
-  box-shadow:
-    0 0 15px color-mix(in srgb, var(--purple) 40%, transparent),
-    0 0 20px color-mix(in srgb, var(--neon-blue) 30%, transparent),
-    0 0 25px color-mix(in srgb, var(--neon-green) 30%, transparent),
-    0 0 30px color-mix(in srgb, var(--gold) 20%, transparent);
+.card {
+  padding: 2em;
 }
 
-/* MULTI-COLOR JARVIS TEXT  */
-.nanite-spatial-interface-text {
-  background: linear-gradient(
-    90deg,
-    var(--purple),
-    var(--neon-blue),
-    var(--neon-green),
-    var(--gold),
-    var(--purple)
-  );
-  background-size: 400%;
-  color: transparent;
-
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  animation: glowshift 5s linear infinite;
-}
-
-
-@keyframes glowshift {
-  0%   { background-position: 0%; }
-  50%  { background-position: 100%; }
-  100% { background-position: 0%; }
+.read-the-docs {
+  color: #888;
 }
