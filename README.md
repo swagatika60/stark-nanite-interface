@@ -8,7 +8,7 @@ More than visuals: it’s an **interactive spatial** experience that responds to
 
 ---
 
-## 🌌 Project Overview
+## 🌌 Project Overview 
 
 This system merges multiple advanced technologies:
 
